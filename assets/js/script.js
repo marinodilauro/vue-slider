@@ -40,6 +40,7 @@ createApp({
     },
 
     methods: {
+
         prev() {
             console.log('prev');
             this.activeImage--;
@@ -47,6 +48,7 @@ createApp({
                 this.activeImage = this.slides.length - 1;
             }
         },
+
         next() {
             console.log('next');
             this.activeImage++;
@@ -54,9 +56,29 @@ createApp({
                 this.activeImage = 0;
             }
         },
+
+        autoPlay() {
+
+
+
+        },
+    },
+
+    created() {
+        let timeToNextSlide = setInterval(() => {
+            this.activeImage++
+
+            if (this.activeImage === this.slides.length) {
+                this.activeImage = 0;
+            }
+
+            console.log(this.activeImage);
+        }, 2000)
+        console.log(this.activeImage);
     }
 
 }).mount('#app');
+
 
 
 
