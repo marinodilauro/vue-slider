@@ -33,12 +33,12 @@
                 <div class="thumbs">
 
                     <!-- Navigation buttons -->
-                    <div class="prev"></div>
-                    <div class="next"></div>
+                    <div class="prev" @click="prev()"></div>
+                    <div class="next" @click="next()"></div>
 
                     <!-- Thumbnails -->
-                    <div class="thumb" v-for="(thumb, index) in slides">
-                        <img :src="slides[index].image" alt="" @click="activeImage = index">
+                    <div class="thumb" @click="activeImage = index" v-for="(thumb, index) in slides">
+                        <img :src="slides[index].image" alt="">
                     </div>
                 </div>
 

@@ -19,6 +19,7 @@ createApp({
                     text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
                 },
                 {
+
                     image: '../assets/img/03.webp',
                     title: 'Fortnite',
                     text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
@@ -36,6 +37,23 @@ createApp({
             ]
 
         };
+    },
+
+    methods: {
+        prev() {
+            console.log('prev');
+            this.activeImage--;
+            if (this.activeImage < 0) {
+                this.activeImage = this.slides.length - 1;
+            }
+        },
+        next() {
+            console.log('next');
+            this.activeImage++;
+            if (this.activeImage === this.slides.length) {
+                this.activeImage = 0;
+            }
+        },
     }
 
 }).mount('#app');
