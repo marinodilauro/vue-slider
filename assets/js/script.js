@@ -5,6 +5,7 @@ createApp({
     data() {
         return {
 
+            timeToNextSlide: '',
             activeImage: 0,
 
             slides: [
@@ -63,14 +64,14 @@ createApp({
 
         autoPlay() {
 
-            let timeToNextSlide = setInterval(() => {
+            timeToNextSlide = setInterval(() => {
                 this.activeImage++
 
                 if (this.activeImage === this.slides.length) {
                     this.activeImage = 0;
                 }
 
-                console.log(this.activeImage);
+                console.log("play slider");
 
             }, 2000)
 
@@ -79,8 +80,8 @@ createApp({
 
         stopAutoplay() {
 
-            clearInterval(this.timeToNextSlide);
-            console.log(this.timeToNextSlide);
+            clearInterval(timeToNextSlide);
+            console.log("stop slider");
         },
     },
 
