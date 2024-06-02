@@ -9,6 +9,13 @@
     <!-- CSS Link -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
+    <!-- Google Fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
     <title>Slider</title>
 </head>
 
@@ -17,34 +24,40 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0" @mouseleave="autoPlay()" @mouseover="stopAutoplay()">
 
-                <div class="item">
+            <span>Image Slider</span>
 
-                    <!-- Active image -->
-                    <img :src="slides[activeImage].image" :alt="slides[activeImage].image" />
-                    <div class="text">
-                        <h3>{{ slides[activeImage].title }}</h3>
-                        <p> {{ slides[activeImage].text }} </p>
-                    </div>
-                </div>
+            <div>
+                <div class="slider-wrapper" tabindex="0" @mouseleave="autoPlay()" @mouseover="stopAutoplay()">
 
+                    <div class="item">
 
-                <div class="thumbs">
-
-                    <!-- Navigation buttons -->
-                    <div class="prev" @click="prev()"></div>
-                    <div class="next" @click="next()"></div>
-
-                    <!-- Thumbnails -->
-                    <div class="thumb" v-for="(thumb, index) in slides" @click="activeImage = index"
-                        :class="{active: index === activeImage}">
-                        <img :src="slides[index].image" alt="">
+                        <!-- Active image -->
+                        <img :src="slides[activeImage].image" :alt="slides[activeImage].image" />
+                        <div class="text">
+                            <h3>{{ slides[activeImage].title }}</h3>
+                            <p> {{ slides[activeImage].text }} </p>
+                        </div>
                     </div>
 
-                </div>
 
+                    <div class="thumbs">
+
+                        <!-- Navigation buttons -->
+                        <div class="prev" @click="prev()"></div>
+                        <div class="next" @click="next()"></div>
+
+                        <!-- Thumbnails -->
+                        <div class="thumb" v-for="(thumb, index) in slides" @click="activeImage = index"
+                            :class="{active: index === activeImage}">
+                            <img :src="slides[index].image" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
+
         </div>
 
     </div>

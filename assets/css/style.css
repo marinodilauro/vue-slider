@@ -4,24 +4,41 @@
     box-sizing: border-box;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  color:white;
+  background-color: #2e2e2e;
+}
+
 .container {
-    height: 100vh;
+    padding: 2rem 10rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
+    > span {
+        font-size: 3rem;
+    }
+
+    > div {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .item {
     float: left;
-    width: 700px;
-    height: 300px;
+    width: 1200px;
     position: relative;
+    margin-right: 1rem;
 }
 
 .item img {
+    border-radius: 0.5rem;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    aspect-ratio: 16/9;
+    object-fit:cover;
 }
 
 .item .text {
@@ -34,13 +51,13 @@
 
 .thumbs {
     float: left;
-    height: 300px;
-    background: #000;
+    height: 100%;
+    background-color: #ededed;
     position: relative;
 }
 
 .thumb {
-    height: calc((300px) / 5);
+    height: calc(675px / 5);
     opacity: 0.5;
 }
 
@@ -73,12 +90,6 @@
     bottom: 0;
 }
 
-/*
-EXTRA: in questo esempio gli accordion vengono creati
-usando 2 bordi di un quadratino ruotato di 45 gradi
-In una versione base si possono usare delle icone
-oppure i caratteri ∧ (&and;) e ∨ (&or;)
- */
 .prev::after {
     content: '';
     width: 10px;
